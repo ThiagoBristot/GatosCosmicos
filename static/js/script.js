@@ -3,9 +3,9 @@ function showContent(section) {
         if (section === 'projetos') {
             // Liste os nomes das imagens manualmente aqui
             let images = [
-                'resources/eservice.png',
-                'resources/itemnota.png',
-                'resources/TipodeServico.jpg',
+                'Resources/eservice.png',
+                'Resources/itemnota.png',
+                'Resources/TipodeServico.jpg',
             ];
             let imagesHTML = '<h2>Projetos</h2><div class="image-grid">';
             images.forEach((img, index) => {
