@@ -1,41 +1,48 @@
 function showContent(section) {
     let contentDiv = document.getElementById('content');
-    if (section === 'projetos') {
-        fetch('/get_images')
-            .then(response => response.json())
-            .then(data => {
-                let imagesHTML = '<h2>Projetos</h2><div class="image-grid">';
-                data.images.forEach((img, index) => {
-                    imagesHTML += `
-                        <div class="image-item">
-                            <img src="${img}" onclick="showOverlay('${img}')">
-                        </div>`;
-                    if ((index + 1) % 3 === 0) {
-                        imagesHTML += '<div class="clear"></div>';
-                    }
-                });
-                imagesHTML += '</div>';
-                contentDiv.innerHTML = imagesHTML;
+        if (section === 'projetos') {
+            // Liste os nomes das imagens manualmente aqui
+            let images = [
+                'resources/eservice.png',
+                'resources/itemnota.png',
+                'resources/TipodeServico.jpg',
+            ];
+            let imagesHTML = '<h2>Projetos</h2><div class="image-grid">';
+            images.forEach((img, index) => {
+                imagesHTML += `
+                    <div class="image-item">
+                        <img src="${img}" onclick="showOverlay('${img}')">
+                    </div>`;
+                if ((index + 1) % 3 === 0) {
+                    imagesHTML += '<div class="clear"></div>';
+                }
             });
-    } else if (section === 'sobre') {
+            imagesHTML += '</div>';
+            contentDiv.innerHTML = imagesHTML;
+        }
+    } if (section === 'sobre') {
         contentDiv.innerHTML = '<h2>Sobre Mim</h2><p>Informações sobre mim...</p>';
     }
-}
+
 
 document.getElementById('Btn').addEventListener('click', function() {
     window.location.href = 'https://www.instagram.com/sua_conta/';
 });
 
-function showOverlay(imgSrc) {
-    const overlay = document.getElementById('overlay');
-    const overlayImg = document.getElementById('overlay-img');
-    overlayImg.src = imgSrc;
-    overlay.style.display = 'flex';
+function showOverlay(img) {
+    let overlayHTML = `
+        <div id="overlay" onclick="hideOverlay()">
+            <img src="${img}">
+            <button id="close-btn" onclick="hideOverlay()">Fechar</button>
+        </div>`;
+    document.body.insertAdjacentHTML('beforeend', overlayHTML);
 }
 
-function closeOverlay() {
-    const overlay = document.getElementById('overlay');
-    overlay.style.display = 'none';
+function hideOverlay() {
+    let overlay = document.getElementById('overlay');
+    if (overlay) {
+        overlay.remove();
+    }
 }
 
 function generateStar() {
