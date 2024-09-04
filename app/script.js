@@ -1,7 +1,7 @@
 function showContent(section) {
     let contentDiv = document.getElementById('content');
     if (section === 'projetos') {
-        fetch('/get_images')
+        /*fetch('/get_images')
             .then(response => response.json())
             .then(data => {
                 let imagesHTML = '<h2>Projetos</h2><div class="image-grid">';
@@ -16,8 +16,21 @@ function showContent(section) {
                 });
                 imagesHTML += '</div>';
                 contentDiv.innerHTML = imagesHTML;
-            });
-    } else if (section === 'sobre') {
+            });*/
+        let imagesHTML = '<h2>Projetos</h2><div class="image-grid">';
+        const data = ('https://drive.google.com/file/d/1paxDuthXB4B_uAZ7zl5JkAsFfjfKLwAG/view')
+        data.images.forEach((img, index) => {
+            imagesHTML += `
+                <div class="image-item">
+                    <img src="${img}" onclick="showOverlay('${img}')">
+                </div>`;
+            if ((index + 1) % 3 === 0) {
+                imagesHTML += '<div class="clear"></div>';
+            }
+        });
+        imagesHTML += '</div>';
+        contentDiv.innerHTML = imagesHTML;
+        } else if (section === 'sobre') {
         contentDiv.innerHTML = '<h2>Sobre Mim</h2><p>Informações sobre mim...</p>';
     }
 }
