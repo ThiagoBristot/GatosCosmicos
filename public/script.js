@@ -2,10 +2,10 @@ function showContent(section) {
     let contentDiv = document.getElementById('content');
     if (section === 'projetos') {
         let images = [
-            'public/resources/-1ntcx.jpg',
-            'public/resources/20211220_001724.jpg',
-            'public/resources/20230206_162217.jpg',
-            'public/resources/qtw1ix.jpg'
+            'resources/-1ntcx.jpg',
+            'resources/20211220_001724.jpg',
+            'resources/20230206_162217.jpg',
+            'resources/qtw1ix.jpg'
         ];
         let imagesHTML = '<h2>Projetos</h2><div class="image-grid">';
         images.forEach((img, index) => {
