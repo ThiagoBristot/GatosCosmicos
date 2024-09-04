@@ -1,32 +1,22 @@
 function showContent(section) {
     let contentDiv = document.getElementById('content');
     if (section === 'projetos') {
-        /*fetch('/get_images')
-            .then(response => response.json())
-            .then(data => {
-                let imagesHTML = '<h2>Projetos</h2><div class="image-grid">';
-                data.images.forEach((img, index) => {
-                    imagesHTML += `
-                        <div class="image-item">
-                            <img src="${img}" onclick="showOverlay('${img}')">
-                        </div>`;
-                    if ((index + 1) % 3 === 0) {
-                        imagesHTML += '<div class="clear"></div>';
-                    }
-                });
-                imagesHTML += '</div>';
-                contentDiv.innerHTML = imagesHTML;
-            });*/
+        let images = [
+            'public/resources/-1ntcx.jpg',
+            'public/resources/20211220_001724.jpg',
+            'public/resources/20230206_162217.jpg',
+            'public/resources/qtw1ix.jpg'
+        ];
         let imagesHTML = '<h2>Projetos</h2><div class="image-grid">';
-        const img = 'https://drive.google.com/file/d/1paxDuthXB4B_uAZ7zl5JkAsFfjfKLwAG/view'
-        let index = 0
-        imagesHTML += `
-            <div class="image-item">
-                <img href="${img}" onclick="showOverlay('${img}')">
-            </div>`;
-        if ((index + 1) % 3 === 0) {
-            imagesHTML += '<div class="clear"></div>';
-        }
+        images.forEach((img, index) => {
+            imagesHTML += `
+                <div class="image-item">
+                    <img src="${img}" onclick="showOverlay('${img}')">
+                </div>`;
+            if ((index + 1) % 3 === 0) {
+                imagesHTML += '<div class="clear"></div>';
+            }
+        });
         imagesHTML += '</div>';
         contentDiv.innerHTML = imagesHTML;
     } else if (section === 'sobre') {
