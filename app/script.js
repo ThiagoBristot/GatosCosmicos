@@ -22,7 +22,7 @@ function showContent(section) {
         let index = 0
         imagesHTML += `
             <div class="image-item">
-                <img src="${img}" onclick="showOverlay('${img}')">
+                <img href="${img}" onclick="showOverlay('${img}')">
             </div>`;
         if ((index + 1) % 3 === 0) {
             imagesHTML += '<div class="clear"></div>';
