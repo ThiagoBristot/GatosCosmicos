@@ -13,9 +13,6 @@ function showContent(section) {
                 <div class="image-item">
                     <img src="${img}" onclick="showOverlay('${img}')">
                 </div>`;
-            if ((index + 1) % 3 === 0) {
-                imagesHTML += '<div class="clear"></div>';
-            }
         });
         imagesHTML += '</div>';
         contentDiv.innerHTML = imagesHTML;
