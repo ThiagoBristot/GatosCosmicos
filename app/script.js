@@ -18,16 +18,14 @@ function showContent(section) {
                 contentDiv.innerHTML = imagesHTML;
             });*/
         let imagesHTML = '<h2>Projetos</h2><div class="image-grid">';
-        const data = ('https://drive.google.com/file/d/1paxDuthXB4B_uAZ7zl5JkAsFfjfKLwAG/view')
-        data.images.forEach((img, index) => {
-            imagesHTML += `
-                <div class="image-item">
-                    <img src="${img}" onclick="showOverlay('${img}')">
-                </div>`;
-            if ((index + 1) % 3 === 0) {
-                imagesHTML += '<div class="clear"></div>';
-            }
-        });
+        const img = 'https://drive.google.com/file/d/1paxDuthXB4B_uAZ7zl5JkAsFfjfKLwAG/view'
+        imagesHTML += `
+            <div class="image-item">
+                <img src="${img}" onclick="showOverlay('${img}')">
+            </div>`;
+        if ((index + 1) % 3 === 0) {
+            imagesHTML += '<div class="clear"></div>';
+        }
         imagesHTML += '</div>';
         contentDiv.innerHTML = imagesHTML;
         } else if (section === 'sobre') {
