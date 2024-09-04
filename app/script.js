@@ -19,6 +19,7 @@ function showContent(section) {
             });*/
         let imagesHTML = '<h2>Projetos</h2><div class="image-grid">';
         const img = 'https://drive.google.com/file/d/1paxDuthXB4B_uAZ7zl5JkAsFfjfKLwAG/view'
+        let index = 0
         imagesHTML += `
             <div class="image-item">
                 <img src="${img}" onclick="showOverlay('${img}')">
@@ -28,9 +29,9 @@ function showContent(section) {
         }
         imagesHTML += '</div>';
         contentDiv.innerHTML = imagesHTML;
-        } else if (section === 'sobre') {
+    } else if (section === 'sobre') {
         contentDiv.innerHTML = '<h2>Sobre Mim</h2><p>Informações sobre mim...</p>';
-    }
+        }
 }
 
 document.getElementById('Btn').addEventListener('click', function() {
