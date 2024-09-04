@@ -7,7 +7,7 @@ function showContent(section) {
             'Resources/20230206_162217.jpg',
             'Resources/qtw1ix.jpg'
         ];
-        let imagesHTML = '<div class="background"></div>';'<h2>Projetos</h2><div class="image-grid">';
+        let imagesHTML = '<div class="background">';'<h2>Projetos</h2><div class="image-grid"></div>';
         images.forEach((img, index) => {
             imagesHTML += `
                 <div class="image-item">
