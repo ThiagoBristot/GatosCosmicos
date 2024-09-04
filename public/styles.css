@@ -172,6 +172,7 @@ header .button:active {
 .image-item {
     flex: 1 1 calc(33.333% - 20px);
     max-width: calc(33.333% - 20px);
+    max-height: 140px;
     cursor: pointer;
 }
 
